@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "login-aaaimx",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "auth_aaaimx",
+          "database_id": "4a0bdeeb-d70c-43f2-81e6-e5e52d4481f0"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "fa039c2ff224435688ca218e7ee9776a",
+            "binding": "SECRET",
+            "secret_name": "aaaimx"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
